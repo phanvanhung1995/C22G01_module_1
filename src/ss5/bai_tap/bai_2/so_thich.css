@@ -1,0 +1,19 @@
+table{
+   vertical-align: center;
+}
+h1{
+    color: white;
+    background-color: red;
+}
+body{
+    text-align: center;
+}
+#f1{
+    text-align: center;
+}
+#f1{
+    background-color: cyan;
+}
+fieldset{
+    background-color: white;
+}
