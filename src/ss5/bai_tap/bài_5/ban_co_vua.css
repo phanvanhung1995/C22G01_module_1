@@ -1,0 +1,22 @@
+table,th,td {
+    width: 600px;
+    height: 60px;
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+#tr1{
+    background-color: yellow;
+}
+.trx :nth-child(even){
+    background-color: black;
+}
+.try :nth-child(odd){
+    background-color: black;
+}
+.try .a {
+    background-color: yellow;
+}
