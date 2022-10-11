@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ứng dụng máy tính</title>
+   <link href="ung_dung_may_tinh.css" rel="stylesheet">
+</head>
+<body>
+<input type="text" id="view"><br><br>
+<div class="thang">
+    <table>
+        <tr>
+            <td><button type="button" name="stn" value ="1" onclick="inputValue(this.value)"> 1 </button></td>
+            <td><button type="button" name="stn" value ="2" onclick="inputValue(this.value)"> 2 </button></td>
+            <td><button type="button" name="stn" value ="3"  onclick="inputValue(this.value)"> 3 </button></td>
+            <td><button type="button" name="pheptinh" value ="+"onclick="inputValue(this.value)"> + </button></td>
+        </tr>
+
+        <tr>
+            <td><button type="button" name="stn" value ="4" onclick="inputValue(this.value)"> 4 </button></td>
+            <td><button type="button" name="stn" value ="5" onclick="inputValue(this.value)"> 5 </button></td>
+            <td><button type="button" name="stn" value ="6" onclick="inputValue(this.value)"> 6 </button></td>
+            <td><button type="button" name="pheptinh" value ="-" onclick="inputValue(this.value)"> - </button></td>
+        </tr>
+        <tr>
+            <td><button type="button" name="stn" value ="7" onclick="inputValue(this.value)"> 7 </button></td>
+            <td><button type="button" name="stn" value ="8" onclick="inputValue(this.value)"> 8 </button></td>
+            <td><button type="button" name="stn" value ="9" onclick="inputValue(this.value)"> 9</button></td>
+            <td><button type="button" name="pheptinh" value ="*" onclick="inputValue(this.value)"> * </button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="xoa();"> AC </button></td>
+            <td><button type="button" name="stn" onclick="inputValue(this.value)"> 0 </button></td>
+            <td><button  name= "reusult" onclick="result();"> = </button></td>
+            <td><button type="button" name="pheptinh" value ="/" onclick="inputValue(thiss.value)"> / </button></td>
+        </tr>
+    </table>
+
+</div>
+<script src="ung_dung_may_tinh.js">
+</script>
+</body>
+</html>
