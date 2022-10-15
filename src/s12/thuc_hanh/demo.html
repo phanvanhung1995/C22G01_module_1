@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tạo và tác động với mảng</title>
+</head>
+<body>
+<h2>Sample Screen :</h2>
+<input type="text" id="view">
+<button type="button" onclick="add()"> Add</button>
+<button type="button" onclick="diss()">Display</button>
+<br>
+<hr width="285px" style="float: left">
+<div id="result"></div>
+</body>
+<script>
+    let x = 0 ;
+    let mang = Array() ;
+    function add() {
+        mang[x] = document.getElementById('view').value ;
+        alert(mang[x]) ;
+        x++ ;
+        // document.getElementById('view').value ;
+    }
+    
+    function diss() {
+        let e = '<hr/>';
+        for (let i=0; i< mang.length; i++) {
+            e += i + '=' + mang[i] + '<br>' ;
+        }
+        document.getElementById('result').innerHTML = e
+
+    }
+</script>
+</html>

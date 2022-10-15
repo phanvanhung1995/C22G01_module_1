@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1,2,4,4,6,5]
+
+    //1. let doc = arr.slice(3,6);
+    //slice(số bắt đầu, số cuối cùng) dùng để tách phần tử bắt đầu đến phần tử cuối cùng ra thành 1 mảng mới
+
+  // 2. arr.splice(2,3,'0','8');
+  //   document.write(arr);
+    //splice(phần tử bắt đầu tương tác, số lượng phần tử cần xóa, các phần tử cần thêm vào) cho phép xóa các phần tử ở
+    // điểm mình muốn và thêm vào các phần tử mới
+
+    //3 . arr.sort(function (a,b) {
+    //     if (a<b) {
+    //         return 1
+    //     }
+    //     if (a>b) {
+    //         return -1
+    //     }
+    //     if (a==b) {
+    //         return 0
+    //     }
+    // })
+    // document.write(arr);
+    //sort cho phép sắp xếp theo thứ tự với funtion là cách sắp xếp
+    //nếu chỉ có số thì dùng arr.sort là được
+
+    let student = [{name: 'hung', score: 7},{name: 'linh', score: 9}, {name: 'tung', score: 3}];
+
+
+    student.sort(function (a,b) {
+        if (a.score <b.score) {
+            return 1
+        }
+        if (a.score >b.score) {
+            return -1
+        }
+        if (a.score == b.score) {
+            return 0
+        }
+    })
+    document.write();
+</script>
+</body>
+</html>

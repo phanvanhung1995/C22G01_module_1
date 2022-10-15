@@ -8,15 +8,13 @@
 <button onclick="doanso()">Bắt đầu</button>
 <script>
     function doanso() {
-        debugger;
-        let number = +prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?")
+        let number = +prompt("nhập khoảng chơi")
         let number_ran = Math.floor(Math.random() * number);
-        console.log(number_ran);
-        let number_check = +prompt ("Nhập số bạn đoán");
+        let number_check = +prompt ("Nhập số bạn muốn đóan");
         let count = 0;
         while (number_check !== number_ran) {
             count++;
-            if (count == 4) {
+            if (count == 3) {
                 alert("Bạn hết số lần đoán")
                 break;
             } else if (number_check < number_ran) {
@@ -26,7 +24,7 @@
             }
             number_check = +prompt ("Nhập số bạn đoán");
         }
-        if (count == 4) {
+        if (count == 3) {
             document.write("Bạn hết số lần đoán")
         } else {
             document.write("Bạn đã đoán đúng số. Chúc mừng bạn!")
