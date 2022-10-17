@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kyTu(a) {
+        let x =[0,1,2,3,4,5,6,7,8,9];
+        let result =true ;
+        for (i=0;i<x.length;i++) {
+            if (x[i] == a) {
+                result = true ;
+                break
+            } else {
+                result = false ;
+            }
+        }
+        return result ;
+    }
+    alert(kyTu(prompt('nhập vào ký tự muốn kiểm tra'))) ;
+</script>
+</body>
+</html>

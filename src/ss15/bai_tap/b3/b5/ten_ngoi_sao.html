@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a =['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe' ,'Regulus'] ;
+    let b = ['UrsaMinor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'UrsaMajor', 'Leo'];
+    function ngoiSao(text) {
+
+
+        for (let i= 0; i<a.length; i++) {
+            if (a[i] == text) {
+                let result = b[i];
+                break;
+            } else {
+                result = 'không tìm thấy ngôi sao nào' ;
+            }
+        }
+        return result ;
+    }
+    alert(ngoiSao(prompt('nhập vào ngôi sao cần tìm')))
+</script>
+</body>
+</html>

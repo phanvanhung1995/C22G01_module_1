@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm tính diện tích, hàm tính chu vi hình tròn</title>
+</head>
+<body>
+<script>
+    function hinhTron(r) {
+        let result = Math.PI * r;
+        return result;
+    }
+let r = prompt('nhập vào r')
+    let chuVi = hinhTron(r) * 2;
+    let dienTich = hinhTron(r) * r;
+    document.write('chu vi hình tròn là :' + chuVi + '<br>');
+    document.write('diện tích hình tròn là :' + dienTich);
+</script>
+</body>
+</html>
