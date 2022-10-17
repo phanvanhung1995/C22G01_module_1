@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và gọi hàm</title>
+</head>
+<body>
+<script>
+    function processconfirm(answer ) {
+        let result = '';
+        if (answer) {
+            result = 'đúng';
+    } else {
+            result = 'sai';
+        }
+        return result;
+
+    }
+    let confirmNew = confirm('bạn có yêu bóng đá không?');
+    let theAnswer = processconfirm(confirmNew) ;
+    alert(theAnswer) ;
+</script>
+
+</body>
+</html>

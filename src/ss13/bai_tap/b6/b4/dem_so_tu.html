@@ -7,14 +7,14 @@
 <body>
 <script>
     let x = prompt('nhập câu bạn thích') ;
-    let a = x.split('') ;
+    let a = x.split(' ') ;
    let sum = 0;
     for (let i =0; i<a.length;i++) {
-       if (a[i] == " ") {
+       if (a[i] != "" ) {
            sum++
        }
     }
-document.write("số lượng từ là :" + (sum +1))
+document.write("số lượng từ là :" + sum)
 </script>
 </body>
 </html>
