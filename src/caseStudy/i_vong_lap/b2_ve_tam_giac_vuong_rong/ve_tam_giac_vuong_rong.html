@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ve tam giác vuông rỗng</title>
+</head>
+<body>
+<script>
+    let h = prompt('nhập chiều cao tam giác') ;
+    for (i=0; i<=h; i++) {
+        for (j=0; j<=i ;j++) {
+            if (i==0||i==h||j==0||j==i) {
+                document.write('*&nbsp&nbsp')
+            } else {
+                document.write('&nbsp&nbsp&nbsp&nbsp')
+        }
+
+        }
+        document.write('<br>')
+    }
+</script>
+</body>
+</html>

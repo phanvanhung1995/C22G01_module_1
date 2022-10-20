@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="rectango">
+</canvas>
+<script>
+    class Rectangle {
+        constructor(x,y,width,height) {
+            this.x = x ;
+            this.y = y ;
+            this.width = width ;
+            this.height = height ;
+        }
+
+        thearea() {
+            return (this.width * this. height) ;
+        }
+        circumference() {
+            return ((this.width +this.height) * 2 ) ;
+        }
+
+        drawRectangle() {
+            let ctx = document.getElementById('rectango').getContext('2d')
+            ctx.beginPath()
+            ctx . fillStyle = '#ff0000' ;
+            ctx.fillRect(this.x, this.y, this.width, this.height) ;
+            ctx.fill();
+        }
+    }
+    let a = parseInt(prompt('nhập chiều dài'));
+    let b = parseInt(prompt('nhập chiều rộng'));
+    let myRectangle = new Rectangle(1,1,a,b) ;
+    myRectangle.drawRectangle();
+    document.write('diện tích là : ' + myRectangle.thearea(a,b) + 'px' + '<br>')
+    document.write('chu vi là :' + myRectangle.circumference(a,b) + 'px')
+</script>
+
+</body>
+</html>

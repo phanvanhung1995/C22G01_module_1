@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ hình chữ nhật rỗng </title>
+</head>
+<body>
+<script>
+    let n = prompt('nhập chiều dài');
+    let m = prompt('nhập chiều rộng')
+    for (i=0; i<=m ;i++) {
+        for (j=0; j <= n; j++) {
+            if (i==0 || i==m || j==0 || j==n ) {
+                document.write('*&nbsp&nbsp')
+            } else {
+                document.write('&nbsp&nbsp&nbsp&nbsp')
+            }
+        }
+        document.write('<br>')
+    }
+</script>
+</body>
+</html>

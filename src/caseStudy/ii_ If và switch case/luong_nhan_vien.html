@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nhập lương nhân viên</title>
+</head>
+<body>
+<script>
+    let tienLuong = prompt('nhập số tiền lương ');
+    let thuePhaiNop ;
+    let luongRong ;
+    if (tienLuong< 7000000) {
+        thuePhaiNop = tienLuong *5 / 100 ;
+        luongRong = tienLuong- thuePhaiNop ;
+    } else if (tienLuong<15000000) {
+        thuePhaiNop = tienLuong *10 / 100 ;
+        luongRong = tienLuong- thuePhaiNop ;
+    } else {
+        thuePhaiNop = tienLuong *20 / 100 ;
+        luongRong = tienLuong- thuePhaiNop ;
+    }
+    alert('thuế phải nộp là : ' + thuePhaiNop);
+    alert('lương còn lại bạn nhận được sau thuế là :' + luongRong);
+</script>
+</body>
+</html>

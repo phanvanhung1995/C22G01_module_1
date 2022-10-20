@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="b5.css" rel="stylesheet">
+</head>
+<body>
+<center>
+<h2>Add New Product</h2>
+
+<div>
+    <input id='result' type="text" placeholder="New product">
+    <button type="button" onclick="add()">Add</button>
+</div>
+<h3>Display All Product</h3>
+<h4>Product Name</h4>
+<div id="result2"></div>
+
+<script>
+    let productLiss = ["Sony Xperia", "Samsung Galaxy", "Nokia 6",
+        "Xiaomi Redmi Note4", "Apple Iphone 6S", "Xiaomi Mmi 5s Plus",
+        "Apple Iphone 8 Plus", "Fujitsu F-04E", "Oppo A71"] ;
+    function addPhone(arr) {
+        let table = "<table style='width: 600px;height: 300px'>"
+        for (i= 0; i< arr.length;i++) {
+            table = table + "<tr>" ;
+            table = table + "<td>" + (arr[i]) + "<td/>" ;
+            table = table + "<td>" + "<button type='button' onclick='editProduct("+i+")'>Edit</button>"  + "<td/>" ;
+            table = table + "<td>" + "<button type='button' onclick='deleteProduct("+i+")'>Delete</button>"  + "<td/>" ;
+            table = table + "<tr/>"
+            document.getElementById('result2').innerHTML = table ;
+        }
+        return table ;
+    }
+    addPhone(productLiss) ;
+
+    function add() {
+        productLiss.push(document.getElementById('result').value) ;
+        addPhone(productLiss) ;
+    }
+    function editProduct(i) {
+        let edit = prompt('nhập dữ liệu muốn chỉnh sửa');
+        productLiss[i] = edit ;
+        addPhone(productLiss) ;
+    }
+    function deleteProduct(i) {
+        productLiss.splice(i,1) ;
+        addPhone(productLiss);
+    }
+
+</script>
+</center>
+</body>
+
+
+</html>
