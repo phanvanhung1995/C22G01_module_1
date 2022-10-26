@@ -6,15 +6,15 @@
 </head>
 <body>
 <script>
-    let x =prompt('nhập vào dãy số bạn muốn') ;
-    let a = x.split('');
-    let y =[];
-    let sum ;
-    for (let i=0; i<=a.length;i++ ) {
 
+    let x=prompt('nhạp vào dãy số');
+    let a = (x.split(''))
+    let b = [];
+    for (let i = 1; i < a.length; i++) {
+        b[0] = a[0];
+        b[i] = +(b[i - 1]) + +(a[i]);
     }
-    // let b= y.join('') ;
-    // document.write('kết quả prefixSums(x) =  ' + b)
+    document.write(b)
 </script>
 </body>
 </html>
