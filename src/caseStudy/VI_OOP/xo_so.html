@@ -2,9 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>xổ số</title>
 </head>
 <body>
+<h2 style="text-align: center">CHÀO MỪNG BẠN ĐẾN VỚI HỆ THỐNG XỔ SỐ CỦA C0922G1</h2>
+<H4 style="text-align: center">mời bạn nhập 6 cặp số bạn muốn</H4>
+<div class="nhapSo" style="text-align: center ; font-size: 20px">
+    <input type="text" id="nhapSo1" style="width: 50px" maxlength="2"> --
+    <input type="text" id="nhapSo2" style="width: 50px" maxlength="2"> --
+    <input type="text" id="nhapSo3" style="width: 50px" maxlength="2"> --
+    <input type="text" id="nhapSo4" style="width: 50px" maxlength="2"> --
+    <input type="text" id="nhapSo5" style="width: 50px" maxlength="2"> --
+    <input type="text" id="nhapSo6" style="width: 50px" maxlength="2"> <br> <br>
+    <button type="button" onclick="ranDom()">random</button>
+    <button type="button" onclick="muaVe()">Mua Vé</button>
+    <button type="button" onclick="ranDom()">Quay SỐ</button>
+    <button type="button" onclick="hienThi()">Hiển thị kết quả</button>
+</div>
+<hr>
 
+<div style="float: left;text-align: center">
+    <p> Vé bạn mua : </p>
+    <table border="1px" style="width: 450px">
+        <thead>
+        <tr>
+            <th>cặp thứ nhất</th>
+            <th>cặp thứ hai</th>
+            <th>cặp thứ ba</th>
+            <th>cặp thứ tư</th>
+            <th>cặp thứ năm</th>
+            <th>cặp thứ sáu</th>
+        </tr>
+        </thead>
+        <tbody id="result1"></tbody>
+    </table>
+</div>
+     <div style="float: right ; text-align: center">
+         <p>vé đặc biệt hôm nay là</p>
+         <table border="1px" style="width: 450px ">
+             <thead>
+             <tr >
+                 <th>cặp thứ nhất</th>
+                 <th>cặp thứ hai</th>
+                 <th>cặp thứ ba</th>
+                 <th>cặp thứ tư</th>
+                 <th>cặp thứ năm</th>
+                 <th>cặp thứ sáu</th>
+             </tr>
+             </thead>
+             <tbody id="result2"></tbody>
+         </table>
+     </div>
+<hr>
+<div style="text-align: center">
+    <button type="button" style="text-align: center" onclick="soSanh()">So Sánh Kết Quả</button><br>
+</div>
+
+<div id="reslt3" style="text-align: center"></div>
 </body>
+<script>
+    let danhSachCacVeDaMua=[];
+    let veDacBiet =[];
+    function ranDom() {
+        document.getElementById('nhapSo1').value = Math.floor(Math.random() * 101);
+        document.getElementById('nhapSo6').value = Math.floor(Math.random() * 101);
+        document.getElementById('nhapSo2').value = Math.floor(Math.random() * 101);
+        document.getElementById('nhapSo3').value = Math.floor(Math.random() * 101);
+        document.getElementById('nhapSo4').value = Math.floor(Math.random() * 101);
+        document.getElementById('nhapSo5').value = Math.floor(Math.random() * 101);
+    }
+
+    function muaVe() {
+        let nhapSo1 = document.getElementById('nhapSo1').value
+        let nhapSo2 = document.getElementById('nhapSo2').value
+        let nhapSo3 = document.getElementById('nhapSo3').value
+        let nhapSo4 = document.getElementById('nhapSo4').value
+        let nhapSo5 = document.getElementById('nhapSo5').value
+        let nhapSo6 = document.getElementById('nhapSo6').value
+        let ve = [nhapSo1,nhapSo2,nhapSo3,nhapSo4,nhapSo5,nhapSo6];
+        danhSachCacVeDaMua.push(ve)
+        let table = "<table style='width: 600px;height: 300px'>";
+        table += '<tr>';
+        table += '<td>' + nhapSo1 + '</td>';
+        table += '<td>' + nhapSo2 + '</td>';
+        table += '<td>' + nhapSo3 + '</td>';
+        table += '<td>' + nhapSo4 + '</td>';
+        table += '<td>' + nhapSo5 + '</td>';
+        table += '<td>' + nhapSo6 + '</td>';
+        table += '</tr>';
+        table += "</table>";
+        document.getElementById('result1').innerHTML += table
+    }
+    function hienThi() {
+
+        let nhapSo1 = document.getElementById('nhapSo1').value
+        let nhapSo2 = document.getElementById('nhapSo2').value
+        let nhapSo3 = document.getElementById('nhapSo3').value
+        let nhapSo4 = document.getElementById('nhapSo4').value
+        let nhapSo5 = document.getElementById('nhapSo5').value
+        let nhapSo6 = document.getElementById('nhapSo6').value
+         veDacBiet = [nhapSo1,nhapSo2,nhapSo3,nhapSo4,nhapSo5,nhapSo6];
+        let table = "<table style='width: 600px;height: 300px'>";
+        table += '<tr>';
+        table += '<td>' + nhapSo1 + '</td>';
+        table += '<td>' + nhapSo2 + '</td>';
+        table += '<td>' + nhapSo3 + '</td>';
+        table += '<td>' + nhapSo4 + '</td>';
+        table += '<td>' + nhapSo5 + '</td>';
+        table += '<td>' + nhapSo6 + '</td>';
+        table += '</tr>';
+        table += "</table>";
+        document.getElementById('result2').innerHTML = table
+    }
+    let team = 0 ;
+    function soSanh() {
+        for (let i=0; i<danhSachCacVeDaMua[0].length;i++) {
+            for (let j= 0; j<veDacBiet;j++) {
+                if (danhSachCacVeDaMua[0][i] ==veDacBiet[j]) {
+                    team +=1 ;
+                    veDacBiet[j].split(j,1)
+                    break ;
+                }
+            }
+            console.log(team)
+        }
+
+    }
+
+</script>
 </html>
