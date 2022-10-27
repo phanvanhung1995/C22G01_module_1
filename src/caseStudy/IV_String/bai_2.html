@@ -6,11 +6,18 @@
 </head>
 <body>
 <script>
-    let x = ['a','b', 'c', 'a']
-    let count = 0 ;
+     let x = prompt('nhập dãy cần kiểm tra')
+    let y = x.split('')
+     y.sort()
+     console.log(y)
     for (let i=0; i<y.length;i++) {
-        if ()
+        if(y[i]== y[i+1]) {
+           y.splice(i,1,)
+        }
     }
+    alert('vậy số ký tự khác nhau trong chuỗi là : ' + y.length)
+
+
 </script>
 </body>
 </html>

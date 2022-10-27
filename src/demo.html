@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 5 - Bài 2</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt("Nhập độ dài mảng 1"));
+    let n = parseInt(prompt("Nhập độ dài mảng 2"));
+    let mang1 = [];
+    let mang2 = [];
+
+    for (let i = 0; i < m; i++) {
+        mang1[i] = parseInt(prompt("Nhập phần tử mảng 1"));
+    }
+
+    for (let i = 0; i < n; i++) {
+        mang2[i] = parseInt(prompt("Nhập phần tử mảng 2"));
+    }
+    let mang = [mang1, mang2];
+    document.write("[" + mang1 + "]" + "<br>" + "[" + mang2 + "]" + "<br>");
+    let count = 0;
+    let mangMoi = [];
+
+    for (let i = 0; i < mang.length; i++) {
+        for (let j = 0; j < mang[i].length; j++) {
+            let check = true;
+            if (mang[i][j] >= 2) {
+                for (let k = 2; k < mang[i][j]; k++) {
+                    if (mang[i][j] % k == 0) {
+                        check = false;
+                        break;
+                    }
+                }
+            } else check = false;
+            if (check == true) {
+                if (mangMoi.indexOf(mang[i][j]) === -1) {
+                    mangMoi.push(mang[i][j]);
+                }
+            }
+        }
+    }
+    document.write("Các số nguyên tố có trong mảng 2 chiều là " + mangMoi);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt('nhạp vào số lượng mảng a') ;
+
+    let m=[] ;
+
+    for (let i= 0;i<a ;i++) {
+        let x = parseInt(prompt('nhập số thứ ' + (i+1) + ' của mảng a'));
+        m.push(x)
+    }
+    let b = prompt('nhập vào số lượng mảng b');
+    let n =[] ;
+    for (let i= 0;i<b ;i++) {
+        let y = parseInt(prompt('nhập số thứ' + (i+1) + ' của mảng b')) ;
+        n.push(y)
+    }
+    let mang = [m,n]
+    let sum = 0
+    for (let i= 0; i< mang.length;i++) {
+        for (let j=0; j<mang[i].length;j++) {
+            if (mang[i][j] %2 ==0) {
+                sum += mang[i][j];
+            }
+        }
+    }
+    document.write( 'tổng các số chẵn là ' + sum)
+</script>
+</body>
+</html>

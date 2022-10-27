@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt('nhập số lượng số mảng a'));
+    let x = []
+    for (let i = 0; i < a; i++) {
+        x[i] = prompt('nhập số thứ ' + (i + 1))
+    }
+    let b = parseInt(prompt('nhập số lượng số mảng b'));
+    let y = []
+    for (let i = 0; i < b; i++) {
+        y[i] = prompt('nhập số thứ ' + (i + 1))
+    }
+    document.write('mảng a = ' + '[' + x + ']' + '<br>')
+    document.write('mảng b = ' + '[' + y + ']' + '<br>')
+    mang2Chieu = [x, y]
+
+    let max = mang2Chieu[0][0] ;
+    for (let i= 0;i<2 ;i++) {
+        for (let j=0 ; j< mang2Chieu[i][j] ; j++) {
+            if (mang2Chieu[i][j] >= max) {
+                max = mang2Chieu[i][j]
+            }
+        }
+    }
+    document.write('vậy giá trị lớn nhất là ' + max + '<br>') ;
+    let min = mang2Chieu[0][0] ;
+    for (let i= 0;i<2 ;i++) {
+        for (let j=0 ; j< mang2Chieu[i][j] ; j++) {
+            if (mang2Chieu[i][j] <= min) {
+                min = mang2Chieu[i][j]
+            }
+        }
+    }
+    document.write('vậy giá trị nhỏ nhất là ' + min + '<br>') ;
+</script>
+</body>
+</html>
