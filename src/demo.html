@@ -2,78 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tạo menu</title>
+    <title> </title>
 </head>
-<style>
-    table, th, td, tr {
-        border: 1px solid black;
-    }
-</style>
+
 <body>
-<table style="width: 450px">
-    <tr><h2>MENU</h2></tr>
-    <tr>
-        <td><h3>Tên Món</h3></td>
-        <td><h3>Giá</h3></td>
-        <td><h3>Số lượng</h3></td>
-        <td><h3>Chọn món</h3></td>
-    </tr>
-    <tr>
-        <td><h4>Nước cam</h4></td>
-        <td><h4>20.000</h4></td>
-        <td><input id="nuocCam" type="number"></td>
-        <td><button type="button" onclick="order(0)">Chọn</button></td>
-    </tr>
-    <tr>
-        <td><h4>Cà phê</h4></td>
-        <td><h4>20.000</h4></td>
-        <td><input id="caPhe" type="number"></td>
-        <td><button type="button" onclick="order(1)">Chọn</button></td>
-    </tr>
-    <tr>
-        <td><h4>Nước ép ổi</h4></td>
-        <td><h4>20.000</h4></td>
-        <td><input id="nuocOi" type="number"></td>
-        <td><button type="button" onclick="order(2)">Chọn</button></td>
-    </tr>
-    <tr>
-        <td><h4>Nước ép cóc</h4></td>
-        <td><h4>20.000</h4></td>
-        <td><input id="nuocCoc" type="number"></td>
-        <td><button type="button" onclick="order(3)">Chọn</button></td>
-    </tr>
-    <tr>
-        <td><h4>Sữa chua dâu</h4></td>
-        <td><h4>20.000</h4></td>
-        <td><input id="suaDau" type="number"></td>
-        <td><button type="button" onclick="order(4)">Chọn</button></td>
-    </tr>
-    <tr>
-        <td><h4>Nước ép dứa</h4></td>
-        <td><h4>20.000</h4></td>
-        <td><input id="nuocDua" type="number"></td>
-        <td><button type="button" onclick="order(5)">Chọn</button></td>
-    </tr>
-</table>
-<p id="ketQua"></p>
+<form action="" name="" >
+
+</form>
 <script>
-    let arrNuoc = ["nuocCam","caPhe", "nuocOi", "nuocCoc", "suaDau", "nuocDua"];
-    let arrGia = [20000,20000,20000,20000,20000,20000];
-    let hoaDon = "";
-    do {
-        function order(maNuoc) {
-            let soLuong = document.getElementById(arrNuoc[maNuoc]).value;
-            let thanhTien = soLuong * arrGia[maNuoc];
-            hoaDon = "Tổng tiền là " + thanhTien + " " + arrNuoc[maNuoc] + " " + soLuong;
-
-            hienThiHoaDon();
-        }
-        function hienThiHoaDon() {
-            document.getElementById("ketQua").innerText = hoaDon;
-
-        }
-    }while (i<7)
 
 </script>
+
 </body>
 </html>

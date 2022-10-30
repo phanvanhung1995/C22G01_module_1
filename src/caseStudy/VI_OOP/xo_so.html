@@ -59,6 +59,7 @@
 </div>
 
 <div id="result3" style="text-align: center"></div>
+<div id="result4" style="text-align: center"></div>
 </body>
 <script>
     let danhSachCacVeDaMua=[];
@@ -91,7 +92,7 @@
         table += '<td>' + nhapSo6 + '</td>';
         table += '</tr>';
         table += "</table>";
-        document.getElementById('result1').innerHTML += table
+        document.getElementById('result1').innerHTML = table
     }
     function hienThi() {
 
@@ -114,21 +115,24 @@
         table += "</table>";
         document.getElementById('result2').innerHTML = table
     }
+    let result ;
     let team = 0 ;
     function soSanh() {
         for (let i=0; i<danhSachCacVeDaMua.length;i++) {
-            for (let j= 0; j<danhSachCacVeDaMua[j].length;j++) {
+            for (let j= 0; j<danhSachCacVeDaMua[i].length;j++) {
                 for (let k =0;k<veDacBiet.length; k++) {
                     if (danhSachCacVeDaMua[i][j] == veDacBiet[k]) {
                         team +=1 ;
                         veDacBiet[k].split(k,1);
                 }
-
                 }
             }
-           document.getElementById('result3').innerHTML= team
+           document.getElementById('result3').innerHTML= ('vé của bạn có ' + team + ' cặp số trùng nhau')
+            document.getElementById('result4').innerHTML= ('chúc bạn may mắn lần sau')
         }
     }
+
+
 
 </script>
 </html>
