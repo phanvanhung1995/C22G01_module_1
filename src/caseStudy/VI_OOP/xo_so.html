@@ -133,8 +133,19 @@
                 }
             }
            document.getElementById('result3').innerHTML= ('vé của bạn có ' + team + ' cặp số trùng nhau')
-            document.getElementById('result4').innerHTML= ('chúc bạn may mắn lần sau')
+            if (team >= 6) {
+                document.getElementById('result4').innerHTML= ('chúc bạn trúng giải đặc biệt, giải thưởng của bạn là 3.000.000.000 đ')
+            } else if (team >= 5) {
+                document.getElementById('result4').innerHTML= ('chúc bạn trúng giải nhất, giải thưởng của bạn là 300.000.000 đ')
+            } else if (team >= 4) {
+                document.getElementById('result4').innerHTML= ('chúc bạn trúng giải nhì, giải thưởng của bạn là 30.000.000 đ')
+            } else if (team >= 3) {
+                document.getElementById('result4').innerHTML= ('chúc bạn trúng giải ba, giải thưởng của bạn là 3000.000 đ')
+            } else {
+                document.getElementById('result4').innerHTML= ('chúc bạn may mắn lần sau')
+            }
+            }
         }
-    }
+
 </script>
 </html>
