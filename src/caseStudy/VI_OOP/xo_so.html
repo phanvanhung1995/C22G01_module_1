@@ -37,25 +37,26 @@
         <tbody id="result1"></tbody>
     </table>
 </div>
-     <div style="float: right ; text-align: center">
-         <p>vé đặc biệt hôm nay là</p>
-         <table border="1px" style="width: 450px ">
-             <thead>
-             <tr >
-                 <th>cặp thứ nhất</th>
-                 <th>cặp thứ hai</th>
-                 <th>cặp thứ ba</th>
-                 <th>cặp thứ tư</th>
-                 <th>cặp thứ năm</th>
-                 <th>cặp thứ sáu</th>
-             </tr>
-             </thead>
-             <tbody id="result2"></tbody>
-         </table>
-     </div>
+<div style="float: right ; text-align: center">
+    <p>vé đặc biệt hôm nay là</p>
+    <table border="1px" style="width: 450px ">
+        <thead>
+        <tr>
+            <th>cặp thứ nhất</th>
+            <th>cặp thứ hai</th>
+            <th>cặp thứ ba</th>
+            <th>cặp thứ tư</th>
+            <th>cặp thứ năm</th>
+            <th>cặp thứ sáu</th>
+        </tr>
+        </thead>
+        <tbody id="result2"></tbody>
+    </table>
+</div>
 <hr>
 <div style="text-align: center">
-    <button type="button" style="text-align: center" onclick="soSanh()">So Sánh Kết Quả</button><br>
+    <button type="button" style="text-align: center" onclick="soSanh()">So Sánh Kết Quả</button>
+    <br>
 </div>
 
 <div id="result3" style="text-align: center"></div>
@@ -67,8 +68,9 @@
     alert(' sau khi có vé bạn hãy quay số để hiển thị cặp số đặc biệt')
     alert(' sau đó hãy ấn so sánh để biết bạn trùng bao nhiêu cặp số ')
     alert(' bạn đã rõ cách chơi, hãy thử ngay nha, TRƯỜNG HỢP BẠN MUỐN TÌM KIẾM 1 BỮA NHẬU HAY LY CAFE LIÊN HỆ HÙNG BỐC SỐ LẤY TIỀN TƯƠI NHÁ')
-    let danhSachCacVeDaMua=[];
-    let veDacBiet =[];
+    let danhSachCacVeDaMua = [];
+    let veDacBiet = [];
+
     function ranDom() {
         document.getElementById('nhapSo1').value = Math.floor(Math.random() * 101);
         document.getElementById('nhapSo6').value = Math.floor(Math.random() * 101);
@@ -85,7 +87,7 @@
         let nhapSo4 = document.getElementById('nhapSo4').value
         let nhapSo5 = document.getElementById('nhapSo5').value
         let nhapSo6 = document.getElementById('nhapSo6').value
-        let ve = [nhapSo1,nhapSo2,nhapSo3,nhapSo4,nhapSo5,nhapSo6];
+        let ve = [nhapSo1, nhapSo2, nhapSo3, nhapSo4, nhapSo5, nhapSo6];
         danhSachCacVeDaMua.push(ve)
         let table = "<table style='width: 600px;height: 300px'>";
         table += '<tr>';
@@ -97,8 +99,9 @@
         table += '<td>' + nhapSo6 + '</td>';
         table += '</tr>';
         table += "</table>";
-        document.getElementById('result1').innerHTML = table
+        document.getElementById('result1').innerHTML += table
     }
+
     function hienThi() {
 
         let nhapSo1 = document.getElementById('nhapSo1').value
@@ -107,7 +110,7 @@
         let nhapSo4 = document.getElementById('nhapSo4').value
         let nhapSo5 = document.getElementById('nhapSo5').value
         let nhapSo6 = document.getElementById('nhapSo6').value
-         veDacBiet = [nhapSo1,nhapSo2,nhapSo3,nhapSo4,nhapSo5,nhapSo6];
+        veDacBiet = [nhapSo1, nhapSo2, nhapSo3, nhapSo4, nhapSo5, nhapSo6];
         let table = "<table style='width: 600px;height: 300px'>";
         table += '<tr>';
         table += '<td>' + nhapSo1 + '</td>';
@@ -120,19 +123,20 @@
         table += "</table>";
         document.getElementById('result2').innerHTML = table
     }
-    let result ;
-    let team = 0 ;
+
+    let result;
+    let team = 0;
+
     function soSanh() {
-        for (let i=0; i<danhSachCacVeDaMua.length;i++) {
-            for (let j= 0; j<danhSachCacVeDaMua[i].length;j++) {
-                for (let k =0;k<veDacBiet.length; k++) {
+        for (let i = 0; i < danhSachCacVeDaMua.length; i++) {
+            for (let j = 0; j < danhSachCacVeDaMua[i].length; j++) {
+                for (let k = 0; k < veDacBiet.length; k++) {
                     if (danhSachCacVeDaMua[i][j] == veDacBiet[k]) {
-                        team +=1 ;
-                        veDacBiet[k].split(k,1);
-                }
+                        team += 1;
+                    }
                 }
             }
-           document.getElementById('result3').innerHTML= ('vé của bạn có ' + team + ' cặp số trùng nhau')
+            document.getElementById('result3').innerHTML= ('vé thứ ' + (i+1) + ' của bạn có ' + team + ' cặp số trùng nhau')
             if (team >= 6) {
                 document.getElementById('result4').innerHTML= ('chúc bạn trúng giải đặc biệt, giải thưởng của bạn là 3.000.000.000 đ')
             } else if (team >= 5) {
@@ -144,8 +148,8 @@
             } else {
                 document.getElementById('result4').innerHTML= ('chúc bạn may mắn lần sau')
             }
-            }
+            team = 0;
         }
-
+    }
 </script>
 </html>

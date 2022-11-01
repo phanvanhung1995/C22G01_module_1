@@ -2,16 +2,295 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> </title>
+    <title>Lottery</title>
+    <style>
+        body {
+            max-width: max-content;
+            margin: auto;
+            background: #82b67b;
+        }
+
+        h1 {
+            width: 650px;
+            text-align: center;
+            color: #c71303;
+            font-size: 60px;
+        }
+
+        td {
+            padding-top: 20px;
+        }
+
+        input {
+            padding-left: 10px;
+            font-weight: bold;
+            color: #ad0000;
+            font-family: Tahoma;
+            font-size: 15px;
+            border-color: #0aff06;
+            border-collapse: collapse;
+
+            width: 100px;
+            height: 60px;
+            text-align: left;
+        }
+
+        p {
+            padding: 5px;
+            font-weight: bold;
+            color: #ad0000;
+            font-family: Tahoma;
+            font-size: 17px;
+            border-color: #0aff06;
+            border-collapse: collapse;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        button {
+            font-size: 15px;
+            margin-left: 0%;
+            border-bottom-right-radius: 30px;
+            border-top-right-radius: 30px;
+            width: 150px;
+            height: 40px;
+            background-color: #309300;
+            color: #faf8f8;
+        }
+    </style>
 </head>
-
 <body>
-<form action="" name="" >
-
-</form>
+<h1>Xổ số</h1>
+<hr/>
+<table>
+    <tr>
+        <td>
+            <input type="number" id="num1">
+        </td>
+        <td>
+            <input type="number" id="num2">
+        </td>
+        <td>
+            <input type="number" id="num3">
+        </td>
+        <td>
+            <input type="number" id="num4">
+        </td>
+        <td>
+            <input type="number" id="num5">
+        </td>
+        <td>
+            <input type="number" id="num6">
+        </td>
+        <td>
+            <button onclick="randomLottery()" style=" background-color: red; width: 100px;border-radius: 1px">Random
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6">
+            <button id="buy" onmouseout="changeBackground(this.id)" onclick="buyLottery()">Mua vé(100đ)</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6">
+            <button id="check result" onmouseout="changeBackground(this.id)" onclick="checkResult()">Xem kết quả
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="num11">
+        </td>
+        <td>
+            <input type="text" id="num22">
+        </td>
+        <td>
+            <input type="text" id="num33">
+        </td>
+        <td>
+            <input type="text" id="num44">
+        </td>
+        <td>
+            <input type="text" id="num55">
+        </td>
+        <td>
+            <input type="text" id="num66">
+        </td>
+    </tr>
+</table>
+<hr/>
+<p id="result" style="height: 100px ;background-color: #ffffff"></p>
+<table>
+    <tr>
+        <td>
+            <input style=" width: 200px ;border: 2px solid red ;border-collapse: collapse;height: 30px" id="money"
+                   type="text" value="money">
+        </td>
+        <td>
+            <button onclick="napTien()">Nạp</button>
+        </td>
+        <td>
+            <button>Vay</button>
+        </td>
+    </tr>
+</table>
+<h3>Vé đã mua: </h3>
+<div id="recentLottery"></div>
 <script>
+    class Lottery {
+        constructor(s1, s2, s3, s4, s5, s6) {
+            this.s1 = s1;
+            this.s2 = s2;
+            this.s3 = s3;
+            this.s4 = s4;
+            this.s5 = s5;
+            this.s6 = s6;
+        }
 
+        getS1() {
+            return this.s1;
+        }
+
+        getS2() {
+            return this.s2;
+        }
+
+        getS3() {
+            return this.s3;
+        }
+
+        getS4() {
+            return this.s4;
+        }
+
+        getS5() {
+            return this.s5;
+        }
+
+        getS6() {
+            return this.s6;
+        }
+
+        checkReward(lottery) {
+            if (this.s1 === lottery.getS1()
+                && this.s2 === lottery.getS2()
+                && this.s3 === lottery.getS3()
+                && this.s4 === lottery.getS4()
+                && this.s5 === lottery.getS5()
+                && this.s6 === lottery.getS6()) {
+                dataResult += "Chúc mừng bạn đạt giải nhất <br> Số tiền bạn nhận được là: 1000000VNĐ"
+                money += 1000000;
+                document.getElementById("result").innerHTML = dataResult;
+                document.getElementById("money").value = "Money: " + money + "đ";
+            } else if (this.s2 === lottery.getS2()
+                && this.s3 === lottery.getS3()
+                && this.s4 === lottery.getS4()
+                && this.s5 === lottery.getS5()
+                && this.s6 === lottery.getS6()) {
+                dataResult += "Chúc mừng bạn đạt giải nhì <br> Số tiền bạn nhận được là: 500000VNĐ"
+                money += 500000;
+                document.getElementById("result").innerHTML = dataResult;
+                document.getElementById("money").value = "Money: " + money + "đ";
+            } else if (this.s4 === lottery.getS4()
+                && this.s5 === lottery.getS5()
+                && this.s6 === lottery.getS6()) {
+                dataResult += "Chúc mừng bạn đạt giải khuyết khích <br> Số tiền bạn nhận được là: 100000VNĐ"
+                document.getElementById("result").innerHTML = dataResult;
+                money += 100000;
+                document.getElementById("money").value = "Money: " + money + "đ";
+            } else {
+                document.getElementById("result").innerHTML = "Chúc bạn may mắn lần sau!";
+            }
+        }
+    }
+
+    let dataResult = "";
+    let lottery = [];
+    let money = 1000;
+    let lotteryRecent = "";
+    let buy = false;
+
+    function buyLottery() {
+
+        if (lottery.length < 5) {
+            buy = true;
+            money -= 100;
+            document.getElementById("money").value = money;
+            document.getElementById("buy").style.backgroundColor = "#7ce04d"
+            let s1 = +document.getElementById("num1").value;
+            let s2 = +document.getElementById("num2").value;
+            let s3 = +document.getElementById("num3").value;
+            let s4 = +document.getElementById("num4").value;
+            let s5 = +document.getElementById("num5").value;
+            let s6 = +document.getElementById("num6").value;
+            lottery.push(new Lottery(s1, s2, s3, s4, s5, s6));
+            lotteryRecent += "<p style='background-color: #e0e0e0;width: 100px; height: 20px'>" + s1 + s2 + s3 + s4 + s5 + s6 + "</p>"
+            document.getElementById("recentLottery").innerHTML = lotteryRecent;
+        } else {
+            alert("bạn chỉ được mua tối đa 5 vé");
+        }
+    }
+
+    let result;
+
+    function checkResult() {
+        if (buy === true) {
+            buy = false;
+            document.getElementById("check result").style.backgroundColor = "#7ce04d";
+            let s1 = Math.ceil(Math.random() * 5);
+            let s2 = Math.ceil(Math.random() * 5);
+            let s3 = Math.ceil(Math.random() * 5);
+            let s4 = Math.ceil(Math.random() * 5);
+            let s5 = Math.ceil(Math.random() * 5);
+            let s6 = Math.ceil(Math.random() * 5);
+            document.getElementById("num11").value = s1;
+            document.getElementById("num22").value = s2;
+            document.getElementById("num33").value = s3;
+            document.getElementById("num44").value = s4;
+            document.getElementById("num55").value = s5;
+            document.getElementById("num66").value = s6;
+            result = new Lottery(s1, s2, s3, s4, s5, s6);
+            for (let k = 0; k < lottery.length; k++) {
+                result.checkReward(lottery[k]);
+            }
+            lottery.length = 0;
+        } else {
+            document.getElementById("result").innerText = "Hãy mua vé trước khi xem kết quả!"
+        }
+    }
+
+    function randomLottery() {
+        let s1 = Math.ceil(Math.random() * 5);
+        let s2 = Math.ceil(Math.random() * 5);
+        let s3 = Math.ceil(Math.random() * 5);
+        let s4 = Math.ceil(Math.random() * 5);
+        let s5 = Math.ceil(Math.random() * 5);
+        let s6 = Math.ceil(Math.random() * 5);
+        document.getElementById("num1").value = s1;
+        document.getElementById("num2").value = s2;
+        document.getElementById("num3").value = s3;
+        document.getElementById("num4").value = s4;
+        document.getElementById("num5").value = s5;
+        document.getElementById("num6").value = s6;
+    }
+
+    function changeBackground(id) {
+        document.getElementById(id).style.backgroundColor = "#309300"
+    }
+
+    function napTien() {
+        let a = +prompt("Nhập mã: ")
+        if (a === 123321) {
+            money += 1000;
+            alert("Tai khoan cua ban da duoc cong 1000đ ^^");
+        } else {
+            alert("Mã không hợp lệ, liên hệ Nhân để xin mã!");
+        }
+        document.getElementById("money").value = "Money: " + money + "đ";
+    }
+
+    document.getElementById("money").value = "Money: " + money + "đ";
 </script>
-
 </body>
 </html>

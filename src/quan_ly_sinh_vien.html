@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<img src="z3842447380355_464c3d218475884ef99dd8500bd1ae4a.jpg">
+<div STYLE=" height: 60px ;text-align: center;color: red; background-color: lightseagreen ; font-size: 50px"> QUẢN LÝ
+    HỌC VIÊN
+</div>
+
+<div style="float:left; text-align: center">
+    <table border="1px" style="text-align: center ; width: 500px;height:300px;background-color: lightblue ">
+        <tr>
+            <th colspan="2" style="background-color: blue ;color: red; font-size: 30px">Thông Tin Học Viên</th>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td>
+                <input type="number" ; id="id">
+            </td>
+        </tr>
+        <tr>
+            <td>Họ Tên</td>
+            <td>
+                <input type="text" ; id="hoTen">
+            </td>
+        </tr>
+        <tr>
+            <td>Ngày sinh</td>
+            <td>
+                <input type="date" ; id="ngaySinh">
+            </td>
+        </tr>
+        <tr>
+            <td>Giới Tính</td>
+            <td>
+                <input type="text" ; id="gioiTinh">
+            </td>
+        </tr>
+        <tr>
+            <td>Lớp</td>
+            <td>
+                <input type="text" ; id="lop">
+            </td>
+        </tr>
+        <tr>
+            <td>Ảnh</td>
+            <td>
+                <input type="url" ; id="anh">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="button" onclick="add()">Add</button>
+                <button type="button" onclick="save()">save</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div style="float:right; text-align: center">
+    <table style="text-align: center ; width: 600px;height:100px ; background-color: aquamarine">
+        <tr>
+            <th colspan="7" style="background-color: yellowgreen; color: red ; font-size: 30px"> Danh Sách Học Viên</th>
+        </tr>
+        <tr>
+            <th>STT</th>
+            <th>ID</th>
+            <th>Họ Tên</th>
+            <th>Ngày Sinh</th>
+            <th>Giới Tính</th>
+            <th>Lớp</th>
+            <th>Ảnh</th>
+            <th>Tùy chọn</th>
+        </tr>
+        <tbody id="result"></tbody>
+    </table>
+</div>
+
+</body>
+<script>
+    let productLiss = [];
+
+    function add() {
+        let id = document.getElementById('id').value
+        let hoTen = document.getElementById('hoTen').value;
+        let ngaySinh = document.getElementById('ngaySinh').value;
+        let gioiTinh = document.getElementById('gioiTinh').value;
+        let lop = document.getElementById('lop').value;
+        let anh = document.getElementById('anh').value;
+        let product = {
+            'id': id,
+            'ngaySinh': ngaySinh,
+            'hoTen': hoTen,
+            'gioiTinh': gioiTinh,
+            'lop': lop,
+            'anh': anh
+        }
+        console.log(product)
+
+        productLiss.push(product)
+        console.log(productLiss)
+        let table = '<table>';
+        for (let i = 0; i < productLiss.length; i++) {
+            table += '<tr>';
+            table += '<td>' + +(i + 1) + '</td>';
+            table += '<td>' + productLiss[i].id + '</td>';
+            table += '<td>' + productLiss[i].hoTen + '</td>';
+            table += '<td>' + productLiss[i].ngaySinh + '</td>';
+            table += '<td>' + productLiss[i].gioiTinh + '</td>';
+            table += '<td>' + productLiss[i].lop + '</td>';
+            table += '<td><img style="width: 50px ; height: 50px" src=" ' + productLiss[i].anh + '"/></td>';
+            table += '<td>' + '<button type="button" onclick="deleteProduct(' + i + ')"> Delete</button>' + '<button type="button" onclick="editProduct(' + i + ')">Edit</button>' + '</td>';
+            table += '</tr>'
+            table += "</table>";
+            document.getElementById('result').innerHTML = table
+        }
+    }
+
+    function deleteProduct(index) {
+        console.log(index)
+        productLiss.splice(index, 1)
+        let table = '<table>';
+        for (let i = 0; i < productLiss.length; i++) {
+            table += '<tr>';
+            table += '<td>' + +(i + 1) + '</td>';
+            table += '<td>' + productLiss[i].id + '</td>';
+            table += '<td>' + productLiss[i].hoTen + '</td>';
+            table += '<td>' + productLiss[i].ngaySinh + '</td>';
+            table += '<td>' + productLiss[i].gioiTinh + '</td>';
+            table += '<td>' + productLiss[i].lop + '</td>';
+            table += '<td>' + productLiss[i].anh + '</td>';
+            table += '<td>' + '<button type="button" onclick="deleteProduct(' + i + ')"> Delete</button>' + '<button type="button" onclick="editProduct(' + i + ')">Edit</button>' + '</td>';
+            table += '</tr>'
+            table += "</table>";
+            document.getElementById('result').innerHTML = table
+        }
+    }
+
+    let idC = -1;
+    function editProduct(index) {
+        idC = index;
+        document.getElementById('id').value = productLiss[index].id
+        document.getElementById('hoTen').value = productLiss[index].hoTen
+        document.getElementById('ngaySinh').value = productLiss[index].ngaySinh
+        document.getElementById('gioiTinh').value = productLiss[index].gioiTinh
+        document.getElementById('lop').value = productLiss[index].lop
+        document.getElementById('anh').value = productLiss[index].anh
+    }
+
+    function save() {
+        productLiss[idC].id = document.getElementById('id').value
+        productLiss[idC].hoTen = document.getElementById('hoTen').value
+        productLiss[idC].ngaySinh = document.getElementById('ngaySinh').value
+        productLiss[idC].gioiTinh = document.getElementById('gioiTinh').value
+        productLiss[idC].lop = document.getElementById('lop').value
+        productLiss[idC].anh = document.getElementById('anh').value
+        let table = '<table>';
+        for (let i = 0; i < productLiss.length; i++) {
+            table += '<tr>';
+            table += '<td>' + +(i + 1) + '</td>';
+            table += '<td>' + productLiss[i].id + '</td>';
+            table += '<td>' + productLiss[i].hoTen + '</td>';
+            table += '<td>' + productLiss[i].ngaySinh + '</td>';
+            table += '<td>' + productLiss[i].gioiTinh + '</td>';
+            table += '<td>' + productLiss[i].lop + '</td>';
+            table += '<td>' + productLiss[i].anh + '</td>';
+            table += '<td>' + '<button type="button" onclick="deleteProduct(' + i + ')"> Delete</button>' + '<button type="button" onclick="editProduct(' + i + ')">Edit</button>' + '</td>';
+            table += '</tr>'
+            table += "</table>";
+            document.getElementById('result').innerHTML = table
+        }
+    }
+</script>
+</html>

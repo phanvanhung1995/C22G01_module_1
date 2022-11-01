@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Viết chương trình tách đôi mảng số nguyên ban đầu sang hai mảng,
+một nửa đầu sang mảng thứ nhất và nửa còn lại sang mảng thứ hai.
+Sau đó hiển thị hai mảng đó ra màn hình.
+</body>
+<script>
+    let n = parseInt(prompt('nhập số lượng phần tử mảng '));
+    let m = [];
+    let result ;
+
+    for (let i = 1; i <= n; i++) {
+        let a = parseInt(prompt('nhập phần tử thứ ' + (i)));
+        m.push(a);
+    }
+    document.write('mảng bạn vừa nhập là : [' + m + ' ]' + '<br>');
+
+    let x= [] ;
+    let y = [] ;
+    for (let i= 0; i<m.length ; i++) {
+        if (i< m.length/2) {
+            x.push(m[i])
+        } else {
+            y.push(m[i])
+        }
+    }
+    document.write('nửa đầu mảng thứ nhất là : [ '+ x + ']' ) ;
+    document.write('nửa đầu mảng thứ hai là : [ '+ y + ']' ) ;
+</script>
+</html>

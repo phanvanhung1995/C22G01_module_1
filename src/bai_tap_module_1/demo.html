@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xóa phần tử có giá trị âm</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('nhập số lượng phần tử mảng '));
+let m = [];
+for (let i = 1; i <= n; i++) {
+    let a = parseInt(prompt('nhập phần tử thứ ' + (i)));
+    m.push(a);
+}
+document.write('mảng bạn vừa nhập là : [' + m + ' ]' + '<br>');
+
+for (let i= 0; i<m.length; i++) {
+    if (m[i] < 0) {
+        m.splice(i,1,)
+    }
+}
+document.write('mảng sau khi xóa là ' + m + '<br>') ;
+
+
+</script>
+</body>
+</html>

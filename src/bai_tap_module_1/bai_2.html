@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('nhập số lượng phần tử mảng '));
+    let m = [];
+    let result ;
+
+    for (let i = 1; i <= n; i++) {
+        let a = parseInt(prompt('nhập phần tử thứ ' + (i)));
+        m.push(a);
+    }
+    document.write('mảng bạn vừa nhập là : [' + m + ' ]' + '<br>');
+
+     index = true;
+    for (let i= 0;i< (m.length/2) ;i++) {
+        if (m[i] !== m[(m.length-i-1)]) {
+            index = false;
+            break ;
+        }
+    }
+    if (index === true) {
+        result = 'đây là mảng đối xứng'
+    } else {
+      result = ' đây là mảng k đối xứng'
+    }
+document.write(result)
+</script>
+</body>
+</html>

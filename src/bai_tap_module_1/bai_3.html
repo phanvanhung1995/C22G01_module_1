@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình nhập các phần tử cho mảng sao cho không có phần tử nào trùng nhau.
+    </title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('nhập số lượng phần tử mảng '));
+    let m = [];
+    let a=[] ;
+    for (let i = 0; i < n; i++) {
+        a[i] = parseInt(prompt('nhập phần tử thứ ' + (i+1) ));
+        while (m.indexOf(a[i]) !== -1) {
+            a[i] = parseInt(prompt('nhập lại số '));
+        }
+        m.push(a[i])
+    }
+    document.write('mảng bạn vừa nhập là : [' + m + ' ]');
+</script>
+</body>
+</html>
