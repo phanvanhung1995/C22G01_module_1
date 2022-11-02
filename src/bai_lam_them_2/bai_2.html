@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt('nhập cạnh a')) ;
+    let b = parseInt(prompt('nhập cạnh b')) ;
+    let c = parseInt(prompt('nhập cạnh c')) ;
+    let x = [a,b,c] ;
+    let d = a+b
+    let e = b+c
+    let f = a+c
+    let m = a *a + b*b
+    let n =  b*b + c*c
+    let k = a *a + c*c
+    let result ;
+    function checkTriangle(a,b,c) {
+        if (d > c && e> a && f>b) {
+            result = 'a,b,c là 3 cạnh của tam giác'
+            if (m === c*c ||n=== a*a ||k===b*b ) {
+             result = 'a,b,c là 3 cạnh của tam giác vuông'
+            }
+        } else {
+            result = 'a,b,c không phai là 3 cạnh của tam giác'
+        }
+        document.write(result)
+    }
+    checkTriangle(a,b,c)
+
+</script>
+</body>
+</html>

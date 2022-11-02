@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="hienThi()">Hiển Thị</button>
+<button type="button" onclick="them()">Thêm</button>
+<div id="result1"></div>
+<div id="result"></div>
+<script>
+    class TaiKhoan {
+        constructor(ma, ten, tenNH, tong) {
+            this.ma = ma;
+            this.ten = ten;
+            this.tenNH = tenNH;
+            this.tong = tong;
+        }
+        getMa() {
+            return this.ma
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        getTenNH() {
+            return this.tenNH;
+        }
+
+        getTong() {
+            return this.tong;
+        }
+
+        setMa(ma) {
+            this.ma = ma
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        setTenNH(tenNH) {
+            this.tenNH = tenNH;
+        }
+
+        setTong(tong) {
+            this.tong = tong;
+        }
+
+        getFull() {
+            return this.ma + this.ten + this.tenNH + this.tong
+        }
+
+    }
+
+    let danhSachTaiKhoan = []
+    let taiKhoanNew = [];
+    let taiKhoan1 = new TaiKhoan('01234 ' , 'phan van hung ' , ' vietcombank ', ' 2645533 ')
+
+    document.getElementById('result1').innerHTML=taiKhoan1.getFull()
+    function them() {
+        let x = prompt('nhập số lượng số tk mà bạn muốn thêm')
+        for (let i = 0; i < x; i++) {
+        let a = prompt('nhập mã tài khoản ngân hàng thứ ' + (i+1));
+        if (a.length !== 5) {
+            alert('yêu cầu nhập lại, mã tk ngân hàng có 5 chữ số')
+            a =prompt('nhập lại mã tài khoản ngân hàng')
+        }
+        let b = prompt('nhập tên của bạnthứ ' + (i+1));
+        let c = prompt('nhập tên ngân hàng thứ ' + (i+1) );
+        let d = prompt('nhập tổng tiền tk thứ ' + (i+1));
+            taiKhoanNew[i] = [ 'tk thứ  ' + (i+1) + 'la : ' + a, b, c, d + '<br>']
+            danhSachTaiKhoan.push(taiKhoanNew[i])
+        }
+        return danhSachTaiKhoan ;
+    }
+
+    function hienThi() {
+        document.getElementById('result').innerHTML= danhSachTaiKhoan
+
+    }
+
+</script>
+</body>
+</html>

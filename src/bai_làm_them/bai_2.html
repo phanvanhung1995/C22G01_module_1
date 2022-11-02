@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>câu 2 </h3>
+Viết hàm có tham số truyền vào là một chuỗi các ký tự.Hàm thực hiện tạo ra một cụm từ viết tắt
+-	Nếu chuỗi có nhiều hơn hoặc bằng 2 từ trở lên thì hàm sẽ trả về 1 cụm từ viết tắt là lấy các ký tự đầu tiên của từng từ và đổi sang in hoa.
+Ví dụ:   object     Oriented     programming => kết quả trả về :OOP
+-	Nếu Chuỗi chỉ có duy nhất 1 từ thì kết quả trả về là 1 thông báo "Chuỗi chỉ có 1 từ nên không cần viết tắc"
+-	    Ví du:     ObjectOriented => chuỗi này chỉ được tính chỉ có 1 từ
+Lưu ý : Các từ được xác định bởi 1 hoặc nhiều cách;
+<p></p>
+</body>
+<script>
+    function vietTat(x) {
+        let y = [] ;
+        if (x.length === 1 ) {
+            alert('chuỗi chỉ có 1 tử nên không cần viết tắt')
+        } else {
+            for (let i= 0 ; i< x.length;i++) {
+                for (let j=0;j<x[i].length;j++) {
+                    y.push(x[i][0])
+                    break ;
+                }
+            }
+        }
+
+    document.write( 'từ viết tắt là '+ y.join('') )
+}
+    let a = prompt('nhập vào chuỗi ký tự')
+    x = a.toUpperCase().split(' ');
+    vietTat(x)
+</script>
+</html>

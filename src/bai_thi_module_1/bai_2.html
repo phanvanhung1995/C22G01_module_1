@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt('nhập vào chuỗi ký tự');
+    let m = a.split("");
+    let index = true;
+
+    function kiemTra(m) {
+        for (let i = 0; i < (m.length / 2); i++) {
+            if (m[i] !== m[(m.length - i - 1)]) {
+                index = false;
+                break;
+            }
+        }
+        if (index === true) {
+            result = ' là mảng đối xứng'
+        } else {
+            result = ' là mảng k đối xứng'
+        }
+        document.write('chuỗi [' + m.join('') + ']' + result)
+    }
+
+    kiemTra(m)
+</script>
+</body>
+</html>
